@@ -5,6 +5,8 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Login from './routes/Login/Login.jsx'
+import Alunos from './routes/Alunos/Alunos.jsx'
+import NovoAluno from './routes/NovoAluno/NovoAluno.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Login />
+      },
+      {
+        path: "/alunos",
+        element: <Alunos />
+      },
+      {
+        path: "/aluno/novo/:alunoId",
+        element: <NovoAluno />
       }
     ]
   }
