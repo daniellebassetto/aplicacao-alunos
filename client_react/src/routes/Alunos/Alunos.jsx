@@ -20,24 +20,31 @@ const Alunos = () => {
         }
     }
 
-    useEffect(() => {
-        api.get('api/aluno', authorization).then(
-            response => {
-                setAlunos(response.data);
-            }, token)
-    }, [])
-
     async function logout() {
         try {
             localStorage.clear();
             localStorage.setItem('token', '')
             authorization.headers = '';
             navigate('/');
-        }
-        catch (erro) {
-            alert('Não foi possível fazer o logout' + erro)
+        } catch (error) {
+            alert('Não foi possível fazer o logout' + error)
         }
     }
+
+    async function editAluno(id) {
+        try {
+            navigate(`/aluno/novo/${id}`);
+        } catch (error) {
+            alert('Não foi possível editar o aluno')
+        }
+    }
+
+    useEffect(() => {
+        api.get('api/aluno', authorization).then(
+            response => {
+                setAlunos(response.data);
+            }, token)
+    }, [])
 
     return (
         <div className='aluno-container'>
@@ -62,7 +69,7 @@ const Alunos = () => {
                         <b>Nome:</b>{aluno.nome}<br /><br />
                         <b>Email:</b>{aluno.email}<br /><br />
                         <b>Idade:</b>{aluno.idade}<br /><br />
-                        <button type='button'>
+                        <button type='button' onClick={() => editAluno(aluno.id)}>
                             <FiEdit size={25} color='#17202a' />
                         </button>
                         <button type='button'>
