@@ -1,8 +1,8 @@
-import './Login.css';
-import logoImage from '../../assets/login.png';
-import api from '../../services/api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logoImage from '../../assets/login.png';
+import api from '../../services/api';
+import './Login.css';
 
 export default function Login() {
 

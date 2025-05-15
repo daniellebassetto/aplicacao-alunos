@@ -1,10 +1,10 @@
-import './Alunos.css';
-import logoCadastro from '../../assets/cadastro1.png'
 import { Link } from 'react-router-dom';
 import { FiXCircle, FiEdit, FiUserX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
-import api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
+import api from '../../services/api';
+import logoCadastro from '../../assets/cadastro1.png'
+import './Alunos.css';
 
 const Alunos = () => {
     const [searchInput, setSearchInput] = useState('');

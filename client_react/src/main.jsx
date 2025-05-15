@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './routes/Login/Login.jsx'
 import Alunos from './routes/Alunos/Alunos.jsx'
 import NovoAluno from './routes/NovoAluno/NovoAluno.jsx'
+import PrivateRoute from './routes/PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,15 +15,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Login />
+        element: <PrivateRoute><Login /></PrivateRoute>
       },
       {
         path: "/alunos",
-        element: <Alunos />
+        element: <PrivateRoute><Alunos /></PrivateRoute>
       },
       {
         path: "/aluno/novo/:alunoId",
-        element: <NovoAluno />
+        element: <PrivateRoute><NovoAluno /></PrivateRoute>
       }
     ]
   }

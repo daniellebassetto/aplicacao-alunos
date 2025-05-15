@@ -1,8 +1,8 @@
-import './NovoAluno.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FiUserPlus, FiCornerDownLeft } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
+import './NovoAluno.css';
 
 const NovoAluno = () => {
     const { alunoId } = useParams();
